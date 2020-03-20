@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Result</title>
+</head>
+<body>
+    <% 
+    if (type === "letterStamped") {
+        type = "Letter (Stamped)"
+    } else if (type === "letterMetered") {
+        type = "Letter (Metered)"
+    } else if (type === "leFlats") {
+        type = "Large Envelope (Flats)"
+    } else if (type === "firstClass") {
+        type = "First-Class Package Service—Retail"
+    }
+    %>
+    <div class="center">
+    <div id="header"><header><h1>USPS Letter Rates</h1></header></div>
+    <div class="answer">Chosen envelope: <span class="result"><%= type %></span> <br>
+        Weight of your mail: <span class="result"><%= weight %> oz</span> <br>
+        Cost for our special client:  <span class="result">$<%= price %></span><br><br>
+    <button onclick="window.history.back()">Back</button>
+    </div>
+</div>
+</body>
+</html>
